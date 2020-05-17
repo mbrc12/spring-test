@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "sinbad" class = "io.mbrc.springtest.BraveKnight">
+        <constructor-arg ref = "quest"/>
+        <property name="realName" value="Sinbad"/>
+    </bean>
+    <bean id = "alibaba" class = "io.mbrc.springtest.BraveKnight">
+        <constructor-arg ref = "quest2"/>
+        <property name="realName" value = "Alibaba 2"/>
+    </bean>
+    <bean id = "quest" class = "io.mbrc.springtest.SlayDragonQuest">
+        <constructor-arg value = "#{T(System).out}"/>
+    </bean>
+    <bean id = "quest2" class = "io.mbrc.springtest.SlayDragonQuest">
+        <constructor-arg value = "#{T(System).out}"/>
+    </bean>
+    <bean id = "standard_io" class = "io.mbrc.springtest.PrinterFactory">
+    </bean>
+</beans>
