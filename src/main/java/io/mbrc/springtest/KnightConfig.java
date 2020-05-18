@@ -3,16 +3,12 @@ package io.mbrc.springtest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
 @Configuration
 public class KnightConfig {
 
     @Bean
-    public Logger logger() {
-        return LoggerFactory.getLogger("knight-logger");
+    public KnightLogFactory logger() {
+        return new KnightLogFactory();
     }
 
     @Bean
@@ -25,5 +21,12 @@ public class KnightConfig {
         BraveKnight sindbad = new BraveKnight(quest1());
         sindbad.setRealName("Sindbad-San");
         return sindbad;
+    }
+
+    @Bean
+    public Knight aladdin () {
+        BraveKnight aladdin = new BraveKnight(quest1());
+        aladdin.setRealName("Aladdin");
+        return aladdin;
     }
 }

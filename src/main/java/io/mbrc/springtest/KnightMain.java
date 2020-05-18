@@ -11,6 +11,7 @@ public class KnightMain {
         ConfigurableApplicationContext context =
                 new AnnotationConfigApplicationContext("io.mbrc.springtest");
         context.getBean("sindbad", Knight.class).embarkOnQuest();
+        context.getBean("aladdin", Knight.class).embarkOnQuest();
         context.close();
     }
 }
